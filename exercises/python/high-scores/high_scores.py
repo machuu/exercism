@@ -5,3 +5,6 @@ class HighScores(object):
     def latest(self):
         return self.scores[-1]
 
+    def personal_best(self):
+        return sorted(self.scores)[-1]
+
