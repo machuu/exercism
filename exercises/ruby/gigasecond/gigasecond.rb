@@ -1,9 +1,9 @@
 # Gigasecond exercise
 
-class Gigasecond
+module Gigasecond
   @@seconds_in_gigasecond = 10 ** 9
 
-  def self.from(from_time = 0)
+  def Gigasecond.from(from_time = 0)
     return from_time + @@seconds_in_gigasecond
   end
 end
