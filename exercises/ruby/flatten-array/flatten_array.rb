@@ -1,6 +1,6 @@
-class FlattenArray
+module FlattenArray
 
-  def self.flatten(array)
+  def FlattenArray.flatten(array)
     # Recursive method to: 
     #   - flatten nested arrays into a 1-D array
     #   - strip nil elements
@@ -12,7 +12,7 @@ class FlattenArray
     array.each do |element|
       if element.is_a? Array
         # If element is an array, flatten it before adding to local array variable
-        flattened_array.push(*self.flatten(element))
+        flattened_array.push(*FlattenArray.flatten(element))
       elsif not element.nil?
         # If element is not nil, add to local array variable
         flattened_array.push(element)
