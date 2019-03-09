@@ -1,6 +1,6 @@
 # Ruby Hello World
 
-class HelloWorld
+module HelloWorld
   def self.hello
     return "Hello, World!"
   end
