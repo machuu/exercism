@@ -10,11 +10,7 @@ function usage {
 # shift at the end of each loop
 while (( $# )) ; do
 	# Check positional argument 1
-	if ! [[ "$1" =~ ^[GTAC]+$ ]] ; then
-		# If $1 is not entirely composed of G,T,A,C then it's not a valid Strand
-		usage
-		exit 1
-	elif [[ ${STRAND1-notset} = "notset" ]] ; then
+	if   [[ ${STRAND1-notset} = "notset" ]] ; then
 		STRAND1="$1"
 	elif [[ ${STRAND2-notset} = "notset" ]] ; then
 		STRAND2="$1"
@@ -34,7 +30,7 @@ if [[ "${STRAND1-notset}${STRAND2-notset}" =~ "notset" ]] ; then
 	usage
 	exit 1
 elif [[ "${STRAND1}${STRAND2}" = "" ]] ; then
-	usage
+	echo 0
 	exit 0
 elif [[ ${#STRAND1} -ne ${#STRAND2} ]] ; then
 	echo 'left and right strands must be of equal length'
