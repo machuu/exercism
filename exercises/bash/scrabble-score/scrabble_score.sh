@@ -3,7 +3,7 @@
 # Scrabble Score
 
 function usage {
-	echo 'Usage: '
+	echo 'Usage: ./scrabble_score.sh <word>'
 }
 
 function get_score_for_letter {
