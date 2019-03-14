@@ -44,7 +44,7 @@ class Phone(object):
             NNAP_match = NNAP_phone_regex.match(self.number)
             self.area_code         = NNAP_match.group(1)
             self.exchange_code     = NNAP_match.group(2)
-            self.subscriber_number = NNAM_match.group(3)
+            self.subscriber_number = NNAP_match.group(3)
         elif ten_digit_phone_regex.match(self.number):
             raise ValueError(self.number + " is not NNAP number")
         elif long_phone_regex.match(self.number):
