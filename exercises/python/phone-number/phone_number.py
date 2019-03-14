@@ -11,20 +11,20 @@ class Phone(object):
         self.number = self.raw_input
 
         # Remove all spaces
-        self.number = re.sub("\s","",self.number)
+        self.number = re.sub(r"\s","",self.number)
         
         # Remove all valid non-digit characters
         #  - leading '+'
         #  - any '-', '(', ')'
-        valid_non_digit_regex = re.compile("(^\+|[\.\-\(\)])")
+        valid_non_digit_regex = re.compile(r"(^\+|[\.\-\(\)])")
         self.number = valid_non_digit_regex.sub("",self.number)
 
 
         # At this point, remaining characters in self.number are
         #   - digits
         #   - invalid punctuation
-        ten_digit_regex = re.compile("^\d{10}$")
-        eleven_digits_with_1_country_code = re.compile("^1\d{10}")
+        ten_digit_regex = re.compile(r"^\d{10}$")
+        eleven_digits_with_1_country_code = re.compile(r"^1\d{10}")
         if ten_digit_regex.match(self.number):
             return True
         elif eleven_digits_with_1_country_code.match(self.number):
@@ -35,10 +35,10 @@ class Phone(object):
             
     def validate_NNAP_format(self):
 
-        NNAP_phone_regex      = re.compile("^([2-9]\d{2})([2-9]\d{2})(\d{4})$")
-        ten_digit_phone_regex = re.compile("^\d{10}$")
-        long_phone_regex      = re.compile("^\d{10}\d+$")
-        short_phone_regex     = re.compile("^\d{0,9}$")
+        NNAP_phone_regex      = re.compile(r"^([2-9]\d{2})([2-9]\d{2})(\d{4})$")
+        ten_digit_phone_regex = re.compile(r"^\d{10}$")
+        long_phone_regex      = re.compile(r"^\d{10}\d+$")
+        short_phone_regex     = re.compile(r"^\d{0,9}$")
 
         NNAP_match = NNAP_phone_regex.match(self.number)
 
