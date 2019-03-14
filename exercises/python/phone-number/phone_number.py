@@ -4,7 +4,7 @@ class Phone(object):
     def __init__(self, input_phone_number):
         self.raw_input = str(input_phone_number)
         self.clean_phone_number()
-        self.validate_NNAP_format()
+        self.validate_NANP_format()
 
     def clean_phone_number(self):
         # Use raw_input as the starting point for self.number
@@ -33,21 +33,21 @@ class Phone(object):
         else:
             raise ValueError(self.number + " contains invalid characters")
             
-    def validate_NNAP_format(self):
+    def validate_NANP_format(self):
 
-        NNAP_phone_regex      = re.compile(r"^([2-9]\d{2})([2-9]\d{2})(\d{4})$")
+        NANP_phone_regex      = re.compile(r"^([2-9]\d{2})([2-9]\d{2})(\d{4})$")
         ten_digit_phone_regex = re.compile(r"^\d{10}$")
         long_phone_regex      = re.compile(r"^\d{10}\d+$")
         short_phone_regex     = re.compile(r"^\d{0,9}$")
 
-        NNAP_match = NNAP_phone_regex.match(self.number)
+        NANP_match = NANP_phone_regex.match(self.number)
 
-        if NNAP_match:
-            self.area_code         = NNAP_match.group(1)
-            self.exchange_code     = NNAP_match.group(2)
-            self.subscriber_number = NNAP_match.group(3)
+        if NANP_match:
+            self.area_code         = NANP_match.group(1)
+            self.exchange_code     = NANP_match.group(2)
+            self.subscriber_number = NANP_match.group(3)
         elif ten_digit_phone_regex.match(self.number):
-            raise ValueError(self.number + " is not NNAP number")
+            raise ValueError(self.number + " is not NANP number")
         elif long_phone_regex.match(self.number):
             raise ValueError(self.number + " is more than 10 digits")
         elif short_phone_regex.match(self.number):
