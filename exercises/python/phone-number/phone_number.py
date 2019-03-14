@@ -54,4 +54,5 @@ class Phone(object):
             raise ValueError(self.number + " is less than 10 digits")
 
     def pretty(self):
-        "(%3d) %3d-%4d".format(self.area_code,self.exchange_code,self.subscriber_number)
+        return '({0}) {1}-{2}'.format(self.area_code,self.exchange_code,self.subscriber_number)
+
