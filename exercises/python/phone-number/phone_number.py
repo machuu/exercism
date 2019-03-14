@@ -40,8 +40,9 @@ class Phone(object):
         long_phone_regex      = re.compile("^\d{10}\d+$")
         short_phone_regex     = re.compile("^\d{0,9}$")
 
-        if NNAP_phone_regex.match(self.number):
-            NNAP_match = NNAP_phone_regex.match(self.number)
+        NNAP_match = NNAP_phone_regex.match(self.number)
+
+        if NNAP_match:
             self.area_code         = NNAP_match.group(1)
             self.exchange_code     = NNAP_match.group(2)
             self.subscriber_number = NNAP_match.group(3)
