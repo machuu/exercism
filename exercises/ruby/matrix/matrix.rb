@@ -1,6 +1,6 @@
 class Matrix
-  attr_accessor :rows
-  attr_accessor :columns
+  attr_reader :rows
+  attr_reader :columns
 
   def initialize(matrix_string)
     @rows    = matrix_string.split("\n").map { |row| row.split.map(&:to_i) }
