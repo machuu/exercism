@@ -23,6 +23,7 @@ else
 
 	EXERCISM_BIN_DIR="$THIS_SCRIPT_DIR/bin"
 	EXERCISM_BIN_PATH="$EXERCISM_BIN_DIR/exercism"
+	EXERCISM_EXERCISES_DIR="$THIS_SCRIPT_DIR/exercises"
 
 	if [[ $PATH =~ "$EXERCISM_BIN_DIR" ]] ; then
 		# Exercism bin/ directory is already in the PATH
@@ -44,5 +45,7 @@ else
 	else
 		echo "couldn't find '$EXERCISM_BASH_COMPLETION'" >&2
 	fi
+
+	cd "$EXERCISM_EXERCISES_DIR" &>/dev/null
 
 fi
