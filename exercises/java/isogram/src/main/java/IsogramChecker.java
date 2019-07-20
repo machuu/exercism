@@ -13,7 +13,9 @@ class IsogramChecker {
 	private int countCharInString(char targetChar, String searchString) {
 		int count = 0;
 		for ( int i = 0; i < searchString.length() ; i++ ) {
-			if ( searchString.charAt(i) == targetChar ) {
+			char searchChar = searchString.charAt(i);
+
+			if ( searchChar == targetChar ) {
 				count++;
 			}
 		}
