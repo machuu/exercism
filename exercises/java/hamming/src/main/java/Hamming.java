@@ -1,21 +1,20 @@
 class Hamming {
 
 	private String leftStrand;
-	private int leftLength;
-
 	private String rightStrand;
-	private int rightLength;
 
-	public int hammingDistance;
+	private int strandLength;
+	private int hammingDistance;
 
     Hamming(String leftStrand, String rightStrand) {
 		this.leftStrand = leftStrand;
 		this.rightStrand = rightStrand;
 
-		this.leftLength = leftStrand.length();
-		this.rightLength = rightStrand.length();
+		int leftLength = leftStrand.length();
+		int rightLength = rightStrand.length();
 
 		if ( leftLength == rightLength ) {
+			this.strandLength = leftLength;
 			getHammingDistance();
 		} else {
 			if ( leftStrand.isEmpty() ) {
@@ -32,7 +31,7 @@ class Hamming {
 		hammingDistance = 0;
 
 		// Test character by character and count mismatches
-		for ( int i = 0; i < leftLength; i++ ) {
+		for ( int i = 0; i < strandLength; i++ ) {
 			int leftChar  = (int)leftStrand.charAt(i);
 			int rightChar = (int)rightStrand.charAt(i);
 
