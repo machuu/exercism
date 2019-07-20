@@ -15,7 +15,6 @@ class Hamming {
 
 		if ( leftLength == rightLength ) {
 			this.strandLength = leftLength;
-			getHammingDistance();
 		} else {
 			if ( leftStrand.isEmpty() ) {
         		throw new IllegalArgumentException("left strand must not be empty.");
