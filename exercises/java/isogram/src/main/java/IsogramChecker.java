@@ -1,5 +1,7 @@
 class IsogramChecker {
 
+	private String allowedDuplicateCharacters = " -";
+
     boolean isIsogram(String phrase) {
         for ( int i = 0; i < phrase.length(); i++ ) {
 			if ( countCharInString( phrase.charAt(i), phrase) > 1 ) {
@@ -15,7 +17,10 @@ class IsogramChecker {
 		for ( int i = 0; i < searchString.length() ; i++ ) {
 			char searchChar = searchString.charAt(i);
 
-			if ( searchChar == targetChar ) {
+			// If current character is an allowed duplicate, then skip counting it
+			if ( allowedDuplicateCharacters.indexOf(searchChar) > -1 ) {
+				continue;
+			} else if ( searchChar == targetChar ) {
 				count++;
 			}
 		}
