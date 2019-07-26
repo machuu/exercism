@@ -10,11 +10,8 @@ class Hamming {
 		this.leftStrand = leftStrand;
 		this.rightStrand = rightStrand;
 
-		int leftLength = leftStrand.length();
-		int rightLength = rightStrand.length();
-
-		if ( leftLength == rightLength ) {
-			this.strandLength = leftLength;
+		if ( leftStrand.length() == rightStrand.length() ) {
+			this.strandLength = leftStrand.length();
 		} else {
 			if ( leftStrand.isEmpty() ) {
         		throw new IllegalArgumentException("left strand must not be empty.");
