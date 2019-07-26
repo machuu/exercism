@@ -24,9 +24,12 @@ class Hamming {
 				throw new IllegalArgumentException("leftStrand and rightStrand must be of equal length.");
 			}
 		}
+
+		calcHammingDistance();
     }
 
-    int getHammingDistance() {
+    void calcHammingDistance() {
+
 		hammingDistance = 0;
 
 		// Test character by character and count mismatches
@@ -38,8 +41,10 @@ class Hamming {
 				hammingDistance++;
 			}
 		}
-
-		return hammingDistance;
     }
+
+	int getHammingDistance() {
+		return hammingDistance;
+	}
 
 }
