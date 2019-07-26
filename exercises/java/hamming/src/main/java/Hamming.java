@@ -31,10 +31,7 @@ class Hamming {
 
 		// Test character by character and count mismatches
 		for ( int i = 0; i < strandLength; i++ ) {
-			char leftChar  = leftStrand.charAt(i);
-			char rightChar = rightStrand.charAt(i);
-
-			if ( leftChar != rightChar ) {
+			if ( leftStrand.charAt(i) != rightStrand.charAt(i) ) {
 				hammingDistance++;
 			}
 		}
