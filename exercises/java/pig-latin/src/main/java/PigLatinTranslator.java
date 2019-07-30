@@ -35,13 +35,16 @@ class PigLatinTranslator {
 		}
 
 		// Check if word starts with multi-character consonant
-		for ( String multiCharConsonant : beginMultiCharConsonantSounds ) {
-			if ( word.startsWith(multiCharConsonant) ) {
-				startsWith = "multiCharConsonant";
-				startSoundLength = multiCharConsonant.length();
-			} else if ( word.startsWith(multiCharConsonant,1) ) {
-				startsWith = "multiCharConsonant";
-				startSoundLength = multiCharConsonant.length() + 1;
+		// but not if 'startsWith' is already assigned
+		if ( startsWith == "" ) {
+			for ( String multiCharConsonant : beginMultiCharConsonantSounds ) {
+				if ( word.startsWith(multiCharConsonant) ) {
+					startsWith = "multiCharConsonant";
+					startSoundLength = multiCharConsonant.length();
+				} else if ( word.startsWith(multiCharConsonant,1) ) {
+					startsWith = "multiCharConsonant";
+					startSoundLength = multiCharConsonant.length() + 1;
+				}
 			}
 		}
 
