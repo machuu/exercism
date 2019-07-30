@@ -15,17 +15,17 @@ class PigLatinTranslator {
 
 	String translate(String word) {
 		
-		boolean startsWithVowelSound = false;
+		String startsWith = "";
 		String translatedWord = "";
 
 		// Check if word starts with a vowel sound
 		for ( String vowelSound : beginVowelSounds ) {
 			if ( word.startsWith(vowelSound) ) {
-				startsWithVowelSound = true;
+				startsWith = "vowelSound";
 			}
 		}
 
-		if (startsWithVowelSound) {
+		if (startsWith == "vowelSound" ) {
 			// translate word starting with vowel sound
 			// just append 'ay' to word
 			translatedWord = word + "ay";
