@@ -29,6 +29,10 @@ class PigLatinTranslator {
 			// translate word starting with vowel sound
 			// just append 'ay' to word
 			translatedWord = word + "ay";
+		} else {
+			// translate word not starting with vowel sound
+			// move first letter to end, then append 'ay'
+			translatedWord = word.substring(1) + word.charAt(0) + "ay";
 		}
 
 		return translatedWord;
