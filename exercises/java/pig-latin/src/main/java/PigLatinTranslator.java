@@ -15,6 +15,7 @@ class PigLatinTranslator {
 	private String[] beginMultiCharConsonantSounds = new String[] {
 		"ch",
 		"qu",
+		"rh",
 		"th",
 		"thr"
 	};
