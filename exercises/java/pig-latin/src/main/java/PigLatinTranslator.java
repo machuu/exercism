@@ -20,7 +20,18 @@ class PigLatinTranslator {
 		"thr"
 	};
 
-	String translate(String word) {
+	String translate(String stringToTranslate ) {
+		String translatedString = "";
+
+		for ( String singleWord : stringToTranslate.split(" ") ) {
+			translatedString += translateSingleWord(singleWord) + " ";
+		}
+
+		return translatedString.trim();
+	}
+
+
+	String translateSingleWord(String word) {
 		
 		String startsWith = "";
 		Integer startSoundLength = 1;
