@@ -22,13 +22,20 @@ class Anagram {
 		return new String( tempCharArray );
 	}
 
+	private boolean isAnAnagram( String matchString ) {
+		String sortedMatch = sortStringInAlphaOrder(matchString);
+		if ( sortedMatch.equals(sortedBase) ) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	public List<String> match( List<String> matches ) {
 		List<String> matchesList = new ArrayList<String>(); 
-		String sortedMatch = "" ;
 
 		for ( String matchString : matches ) {
-			sortedMatch = sortStringInAlphaOrder(matchString);
-			if ( sortedMatch.equals(sortedBase) ) {
+			if ( isAnAnagram(matchString) ) {
 				matchesList.add(matchString);
 			}
 		}
