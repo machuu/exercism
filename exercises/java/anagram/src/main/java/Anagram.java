@@ -17,14 +17,16 @@ class Anagram {
 	}
 
 	private String sortStringInAlphaOrder( String stringToSort ) {
-		return String( Arrays.sort( inputString.toLowerCase().toCharArray() ) );
+		char tempCharArray[] = stringToSort.toLowerCase().toCharArray() ;
+		Arrays.sort( tempCharArray );
+		return new String( tempCharArray );
 	}
 
 	public List<String> match( List<String> matches ) {
 		List<String> matchesList = new ArrayList<String>(); 
 		String sortedMatch = "" ;
 
-		for ( matchString : matches[] ) {
+		for ( String matchString : matches ) {
 			sortedMatch = sortStringInAlphaOrder(matchString);
 			if ( sortedMatch.equals(sortedBase) ) {
 				matchesList.add(matchString);
