@@ -24,7 +24,12 @@ class Anagram {
 
 	private boolean isAnAnagram( String matchString ) {
 		String sortedMatch = sortStringInAlphaOrder(matchString);
-		if ( sortedMatch.equals(sortedBase) ) {
+
+		if ( matchString.toLowerCase().equals( originalString.toLowerCase() ) ) {
+			// If matchString and originalString are the same word, it's not an anagram
+			return false;
+		} else if ( sortedMatch.equals(sortedBase)  ) {
+			// If both strings contain the same letters, it is an anagram
 			return true;
 		} else {
 			return false;
