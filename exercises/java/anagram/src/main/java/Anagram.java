@@ -6,14 +6,14 @@ import java.util.List;
 class Anagram {
 
 	private String originalString = "";
-	private String sortedBase = "";
+	private String sortedOriginal = "";
 
 	Anagram(String baseString) {
 		originalString = baseString;
 
 		// Sort characters from originalString in alphabetical order
 		//
-		sortedBase = sortStringInAlphaOrder( baseString );
+		sortedOriginal = sortStringInAlphaOrder( baseString );
 	}
 
 	private String sortStringInAlphaOrder( String stringToSort ) {
@@ -28,7 +28,7 @@ class Anagram {
 		if ( matchString.toLowerCase().equals( originalString.toLowerCase() ) ) {
 			// If matchString and originalString are the same word, it's not an anagram
 			return false;
-		} else if ( sortedMatch.equals(sortedBase)  ) {
+		} else if ( sortedMatch.equals(sortedOriginal)  ) {
 			// If both strings contain the same letters, it is an anagram
 			return true;
 		} else {
