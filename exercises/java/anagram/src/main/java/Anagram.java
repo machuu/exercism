@@ -23,13 +23,15 @@ class Anagram {
 	}
 
 	private boolean isAnAnagram( String matchString ) {
-		String sortedMatch = sortStringInAlphaOrder(matchString);
 
-		if ( matchString.toLowerCase().equals( originalString.toLowerCase() ) ) {
-			// If matchString and originalString are the same word, it's not an anagram
+		// If matchString and originalString are the same word, it's not an anagram
+		if ( matchString.toLowerCase().equals(originalString.toLowerCase()) ) {
 			return false;
-		} else if ( sortedMatch.equals(sortedOriginal)  ) {
-			// If both strings contain the same letters, it is an anagram
+		}
+
+		// If both strings contain the same letters, it is an anagram
+		String sortedMatch = sortStringInAlphaOrder(matchString);
+		if ( sortedMatch.equals(sortedOriginal)  ) {
 			return true;
 		} else {
 			return false;
