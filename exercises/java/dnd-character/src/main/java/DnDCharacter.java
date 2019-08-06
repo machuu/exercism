@@ -5,7 +5,7 @@ class DnDCharacter {
 	}
 
 	int modifier(int input) {
-		throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+		return (int)Math.floor( ( input - 10 - (input % 2 ) ) / 2 );
 	}
 
 	int getStrength() {
