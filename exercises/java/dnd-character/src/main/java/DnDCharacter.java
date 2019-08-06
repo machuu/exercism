@@ -1,7 +1,37 @@
+import java.util.Random;
+
 class DnDCharacter {
 
+	int rollDie(int numSides) {
+		Random random = new Random();
+		return random.nextInt( numSides) + 1;
+	}
+
 	int ability() {
-		throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+
+		Integer sumOfAllRolls = 0;
+
+		// Roll 4d6
+		Integer rolls[] = {
+			rollDie(6),
+			rollDie(6),
+			rollDie(6),
+			rollDie(6)
+			};
+		
+		// Iterate through array
+		//   - Add all rolls
+		//   - Get lowest Roll
+		Integer lowestRoll = rolls[0];
+		for ( Integer roll : rolls ) {
+			sumOfAllRolls += roll;
+			if ( roll < lowestRoll ) {
+				lowestRoll = roll;
+			}
+		}
+
+		// Return the sum of all rolls, subtracting the lowest
+		return sumOfAllRolls - lowestRoll;
 	}
 
 	int modifier(int input) {
