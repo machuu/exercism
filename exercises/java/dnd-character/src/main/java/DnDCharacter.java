@@ -8,6 +8,7 @@ class DnDCharacter {
 	private Integer intelligenceScore;
 	private Integer wisdomScore;
 	private Integer charismaScore;
+	private Integer hitPoints;
 
 	public DnDCharacter() {
 		// Generate scores
@@ -17,6 +18,7 @@ class DnDCharacter {
 		intelligenceScore = ability();
 		wisdomScore       = ability();
 		charismaScore     = ability();
+		hitPoints         = 10 + modifier(constitutionScore);
 	}
 
 	int rollDie(int numSides) {
@@ -80,7 +82,7 @@ class DnDCharacter {
 	}
 
 	int getHitpoints() {
-		throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+		return hitPoints;
 	}
 
 }
