@@ -2,6 +2,23 @@ import java.util.Random;
 
 class DnDCharacter {
 
+	private Integer strengthScore;
+	private Integer dexterityScore;
+	private Integer constitutionScore;
+	private Integer intelligenceScore;
+	private Integer wisdomScore;
+	private Integer charismaScore;
+
+	public DnDCharacter() {
+		// Generate scores
+		strengthScore     = ability();
+		dexterityScore    = ability();
+		constitutionScore = ability();
+		intelligenceScore = ability();
+		wisdomScore       = ability();
+		charismaScore     = ability();
+	}
+
 	int rollDie(int numSides) {
 		Random random = new Random();
 		return random.nextInt( numSides) + 1;
@@ -39,27 +56,27 @@ class DnDCharacter {
 	}
 
 	int getStrength() {
-		throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+		return strengthScore;
 	}
 
 	int getDexterity() {
-		throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+		return dexterityScore;
 	}
 
 	int getConstitution() {
-		throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+		return constitutionScore;
 	}
 
 	int getIntelligence() {
-		throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+		return intelligenceScore;
 	}
 
 	int getWisdom() {
-		throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+		return wisdomScore;
 	}
 
 	int getCharisma() {
-		throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+		return charismaScore;
 	}
 
 	int getHitpoints() {
