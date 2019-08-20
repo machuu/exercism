@@ -3,16 +3,16 @@ import java.time.LocalDateTime;
 
 class Gigasecond {
 
-	private long one_gigasecond = 1000000000;
+	private static final long ONE_GIGASECOND = 1_000_000_000;
 	private LocalDateTime gigasecondDateTime;
 
     Gigasecond(LocalDate moment) {
 		LocalDateTime momentDateTime = moment.atStartOfDay();
-		gigasecondDateTime = momentDateTime.plusSeconds(one_gigasecond);
+		gigasecondDateTime = momentDateTime.plusSeconds(ONE_GIGASECOND);
     }
 
     Gigasecond(LocalDateTime moment) {
-		gigasecondDateTime = moment.plusSeconds(one_gigasecond);
+		gigasecondDateTime = moment.plusSeconds(ONE_GIGASECOND);
     }
 
     LocalDateTime getDateTime() {
