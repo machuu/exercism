@@ -7,8 +7,7 @@ class Gigasecond {
 	private LocalDateTime gigasecondDateTime;
 
     Gigasecond(LocalDate moment) {
-		LocalDateTime momentDateTime = moment.atStartOfDay();
-		gigasecondDateTime = momentDateTime.plusSeconds(ONE_GIGASECOND);
+		gigasecondDateTime = moment.atStartOfDay().plusSeconds(ONE_GIGASECOND);
     }
 
     Gigasecond(LocalDateTime moment) {
