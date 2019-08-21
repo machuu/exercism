@@ -4,6 +4,8 @@ import java.util.*;
 class Scrabble {
 
 	private static final HashMap<String,Integer> letterScore = initializeLetterScoreMap();
+	private String[] wordLetters;
+	private Integer scrabbleScore = 0;
 
 	private static HashMap<String,Integer> initializeLetterScoreMap() {
 		// Initialize HashMap of scores for each letter
@@ -39,11 +41,17 @@ class Scrabble {
 	}
 
     Scrabble(String word) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+		wordLetters = word.toUpperCase().split("");
+		calcScrabbleScore();
     }
 
     int getScore() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+		return scrabbleScore;
     }
 
+	private void calcScrabbleScore() {
+		for ( String wordLetter : wordLetters ) {
+			scrabbleScore += letterScore.get(wordLetter);
+		}
+	}
 }
