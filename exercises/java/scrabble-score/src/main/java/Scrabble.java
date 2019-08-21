@@ -51,7 +51,7 @@ class Scrabble {
 
 	private void calcScrabbleScore() {
 		for ( String wordLetter : wordLetters ) {
-			scrabbleScore += letterScore.get(wordLetter);
+			scrabbleScore += letterScore.getOrDefault(wordLetter, 0);
 		}
 	}
 }
