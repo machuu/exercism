@@ -2,7 +2,7 @@
 #
 # Source exercism env
 
-THIS_SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+THIS_SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &>/dev/null && pwd )"
 THIS_SCRIPT_NAME=""
 
 if [[ $0 = ${BASH_SOURCE[0]} ]] ; then
