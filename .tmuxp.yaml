@@ -1,7 +1,7 @@
 session_name: exercism
 start_directory: ./
 shell_command_before:
-  - source ./env-exercism.sh
+  - source ./env-exercism.sh --force
 windows:
   - window_name: exercism-workspace
     focus: 'true'
