@@ -21,31 +21,43 @@ else
 		export SOURCED_EXERCISM=true
 	fi
 
-	EXERCISM_BIN_DIR="$THIS_SCRIPT_DIR/bin"
-	EXERCISM_BIN_PATH="$EXERCISM_BIN_DIR/exercism"
-	EXERCISM_EXERCISES_DIR="$THIS_SCRIPT_DIR/exercises"
+	# It appears the exercism is unsetting EXERCISM_ environment variables
+	# prepend variable name to circumvent this
+	export ENV_EXERCISM_DIR="$THIS_SCRIPT_DIR"
+	export ENV_EXERCISM_BIN_DIR="$ENV_EXERCISM_DIR/bin"
+	export ENV_EXERCISM_BIN_PATH="$ENV_EXERCISM_BIN_DIR/exercism"
+	export ENV_EXERCISM_EXERCISES_DIR="$ENV_EXERCISM_DIR/exercises"
 
-	if [[ $PATH =~ "$EXERCISM_BIN_DIR" ]] ; then
+	if [[ $PATH =~ "$ENV_EXERCISM_BIN_DIR" ]] ; then
 		# Exercism bin/ directory is already in the PATH
 		true
 	else
-		PATH+=:$EXERCISM_BIN_DIR
+		PATH+=:$ENV_EXERCISM_BIN_DIR
 	fi
 
-	if [[ -x "$EXERCISM_BIN_PATH" ]] ; then
-		chmod +x "$EXERCISM_BIN_PATH"
-	elif [[ ! -f "$EXERCISM_BIN_PATH" ]] ; then
-		echo "couldn't find '$EXERCISM_BIN_PATH'" >&2
+	if [[ -x "$ENV_EXERCISM_BIN_PATH" ]] ; then
+		chmod +x "$ENV_EXERCISM_BIN_PATH"
+	elif [[ ! -f "$ENV_EXERCISM_BIN_PATH" ]] ; then
+		echo "couldn't find '$ENV_EXERCISM_BIN_PATH'" >&2
 	fi
 
-	EXERCISM_BASH_COMPLETION="$THIS_SCRIPT_DIR/shell/exercism_completion.bash"
+	ENV_EXERCISM_BASH_COMPLETION="$ENV_EXERCISM_DIR/shell/exercism_completion.bash"
 
-	if [[ -f "$EXERCISM_BASH_COMPLETION" ]] ; then
-		source "$EXERCISM_BASH_COMPLETION"
+	if [[ -f "$ENV_EXERCISM_BASH_COMPLETION" ]] ; then
+		source "$ENV_EXERCISM_BASH_COMPLETION"
 	else
-		echo "couldn't find '$EXERCISM_BASH_COMPLETION'" >&2
+		echo "couldn't find '$ENV_EXERCISM_BASH_COMPLETION'" >&2
 	fi
 
-	cd "$EXERCISM_EXERCISES_DIR" &>/dev/null
 
+	# If tmuxp is installed, and current shell is not already attached to tmux
+	# then load tmux profile
+	# otherwise, just cd to exercises/ dir
+	if [[ $(which tmuxp) != "" ]] && [[ ${TMUX-} = "" ]] ; then
+		# Load tmuxp session
+		cd "$ENV_EXERCISM_DIR" &>/dev/null
+		tmuxp load .
+	else
+		cd "$ENV_EXERCISM_EXERCISES_DIR" &>/dev/null
+	fi
 fi
