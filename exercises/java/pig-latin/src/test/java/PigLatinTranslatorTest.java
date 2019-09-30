@@ -149,4 +149,16 @@ public class PigLatinTranslatorTest {
     public void testSlTreatedLikeAConsonantAtTheBeginningOfAWord() {
         assertEquals("ightslay", pigLatinTranslator.translate("slight"));
     }
+
+    //@Ignore("Remove to run test")
+    @Test
+    public void testShTreatedLikeAConsonantAtTheBeginningOfAWord() {
+        assertEquals("aveshay", pigLatinTranslator.translate("shave"));
+    }
+
+    //@Ignore("Remove to run test")
+    @Test
+    public void testShrTreatedLikeAConsonantAtTheBeginningOfAWord() {
+        assertEquals("edshray", pigLatinTranslator.translate("shred"));
+    }
 }
