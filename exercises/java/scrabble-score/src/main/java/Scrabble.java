@@ -42,10 +42,10 @@ class Scrabble {
 
     Scrabble(String word) {
 		wordLetters = word.toUpperCase().split("");
-		calcScrabbleScore();
     }
 
     int getScore() {
+		calcScrabbleScore();
 		return scrabbleScore;
     }
 
