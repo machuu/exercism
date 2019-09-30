@@ -5,7 +5,7 @@ class Scrabble {
 
 	private static final HashMap<String,Integer> letterScore = initializeLetterScoreMap();
 	private String[] wordLetters;
-	private Integer scrabbleScore = 0;
+	private Integer scrabbleScore = null ;
 
 	private static HashMap<String,Integer> initializeLetterScoreMap() {
 		// Initialize HashMap of scores for each letter
@@ -50,6 +50,14 @@ class Scrabble {
     }
 
 	private void calcScrabbleScore() {
+		// if scrabbleScore is not null, it has already been calculated
+		if ( scrabbleScore != null ) {
+			// return early without repeating calculation
+			return;
+		}
+
+		// start at 0, and calculate score
+		scrabbleScore = 0;
 		for ( String wordLetter : wordLetters ) {
 			scrabbleScore += letterScore.getOrDefault(wordLetter, 0);
 		}
