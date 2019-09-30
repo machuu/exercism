@@ -143,4 +143,10 @@ public class PigLatinTranslatorTest {
     public void testAWholePhrase() {
         assertEquals("ickquay astfay unray", pigLatinTranslator.translate("quick fast run"));
     }
+
+    //@Ignore("Remove to run test")
+    @Test
+    public void testSlTreatedLikeAConsonantAtTheBeginningOfAWord() {
+        assertEquals("ightslay", pigLatinTranslator.translate("slight"));
+    }
 }
