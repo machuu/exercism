@@ -16,6 +16,8 @@ class PigLatinTranslator {
 		"ch",
 		"qu",
 		"rh",
+		"sh",
+		"shr",
 		"sl",
 		"th",
 		"thr"
