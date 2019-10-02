@@ -1,0 +1,9 @@
+# JSON
+[*.json]
+indent_style = space
+indent_size = 2
+
+# TypeScript and javascript
+[*.{ts,js}]
+indent_style = space
+indent_size = 2
