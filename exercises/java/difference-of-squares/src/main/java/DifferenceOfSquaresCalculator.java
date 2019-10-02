@@ -17,7 +17,11 @@ class DifferenceOfSquaresCalculator {
     }
 
     int computeSumOfSquaresTo(int input) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        int sum = 0;
+        for ( int i = 1 ; i <= input ; i++ ) {
+            sum += computeSquareOf(i);
+        }
+        return sum;
     }
 
     int computeDifferenceOfSquares(int input) {
