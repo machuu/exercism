@@ -1,11 +1,12 @@
 class Matrix {
 
-  public rows:    number[][] = [];
-  public columns: number[][] = [];
+  public rows:    number[][]
+  public columns: number[][]
 
   constructor( matrix_string: string ) {
 
     // Iterate over string split on new lines
+    this.rows = [];
     for ( let string_array_row of matrix_string.split("\n") ) {
       // Add row to 2D rows array
       //   - Split row string into an Array,
@@ -16,8 +17,8 @@ class Matrix {
     this.transpose_rows_into_columns();
   }
 
-  private transpose_rows_into_columns() {
-    // double loop
+    // double loop to populate columns array
+    this.columns = [];
     // This should work for rectangular matrices.
     // iterate over column numbers in first row of array
     for ( var col_index: number = 0; col_index < this.rows[0].length ; col_index++ ) {
