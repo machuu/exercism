@@ -5,17 +5,16 @@ class Matrix {
 
   constructor( matrix_string: string ) {
 
-    // Iterate over string split on new lines
-    this.rows = [];
-    for ( let string_array_row of matrix_string.split("\n") ) {
-      // Add row to 2D rows array
-      //   - Split row string into an Array,
-      //   - Map String Array -> Number Array
-      //   - Push Number Array onto rows[n]
-      this.rows.push( string_array_row.split(" ").map( (str_number: string): number => Number(str_number) ) );
-    }
-    this.transpose_rows_into_columns();
-  }
+    // Populate rows 2D array
+    this.rows = matrix_string
+      .split("\n")
+      .map( (row_string: string) =>
+        row_string
+        .split(" ")
+        .map( (number_as_string: string): number =>
+          Number(number_as_string)
+        )
+      );
 
     // double loop to populate columns array
     this.columns = [];
