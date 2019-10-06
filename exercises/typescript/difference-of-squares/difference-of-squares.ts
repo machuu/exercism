@@ -13,7 +13,17 @@ class Squares {
   }
 
   private calcSquareOfSum(): number {
-    return 1;
+    // Only calculate if value is null or undefined
+    // Otherwise, just return current value
+    if ( this.squareOfSum == null ) {
+      var sum: number = 0;
+      for ( var num: number = 1 ; num <= this.numberUpTo ; num++ ) {
+        sum += num;
+      }
+      return Math.pow(sum, 2);
+    }
+
+    return this.squareOfSum;
   }
 
   private calcSumOfSquares(): number {
