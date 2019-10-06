@@ -12,15 +12,20 @@ class Squares {
     this.difference = this.calcDifferenceOfSquares();
   }
 
+  // Calculate sum of numberUpTo, with optional exponent
+  private calcSumUpTo( power: number = 1 ): number {
+    var sum: number = 0;
+    for ( var num: number = 1 ; num <= this.numberUpTo ; num++ ) {
+      sum += Math.pow(num, power);
+    }
+    return sum;
+  }
+
   private calcSquareOfSum(): number {
     // Only calculate if value is null or undefined
     // Otherwise, just return current value
     if ( this.squareOfSum == null ) {
-      var sum: number = 0;
-      for ( var num: number = 1 ; num <= this.numberUpTo ; num++ ) {
-        sum += num;
-      }
-      return Math.pow(sum, 2);
+      return Math.pow(this.calcSumUpTo(), 2);
     }
 
     return this.squareOfSum;
@@ -30,11 +35,7 @@ class Squares {
     // Only calculate if value is null or undefined
     // Otherwise, just return current value
     if ( this.sumOfSquares == null ) {
-      var sum: number = 0;
-      for ( var num: number = 1 ; num <= this.numberUpTo ; num++ ) {
-        sum += Math.pow(num, 2);
-      }
-      return sum;
+      return this.calcSumUpTo(2);
     }
 
     return this.sumOfSquares;
