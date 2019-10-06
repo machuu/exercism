@@ -1,15 +1,15 @@
 class Squares {
 
-  private numberUpTo: number;
-  public squareOfSum: number;
+  private numberUpTo:  number;
+  public squareOfSum:  number;
   public sumOfSquares: number;
-  public difference: number;
+  public difference:   number;
 
   constructor(numberUpTo: number) {
-    this.numberUpTo = numberUpTo;
-    this.squareOfSum = this.calcSquareOfSum();
+    this.numberUpTo   = numberUpTo;
+    this.squareOfSum  = this.calcSquareOfSum();
     this.sumOfSquares = this.calcSumOfSquares();
-    this.difference = this.calcDifferenceOfSquares();
+    this.difference   = this.calcDifferenceOfSquares();
   }
 
   // Calculate sum of numberUpTo, with optional exponent
