@@ -43,7 +43,11 @@ class Squares {
   }
 
   private calcDifferenceOfSquares(): number {
-    return 1;
+    if ( this.difference == null ) {
+      return this.squareOfSum - this.sumOfSquares;
+    }
+
+    return this.difference;
   }
 }
 
