@@ -22,7 +22,7 @@ describe('Squares', () => {
   describe('up to 10', () => {
     const squares = new Squares(10)
 
-    xit('gets the square of sum', () => {
+    it('gets the square of sum', () => {
       expect(squares.squareOfSum).toBe(3025)
     })
 
@@ -39,7 +39,7 @@ describe('Squares', () => {
   describe('up to 100', () => {
     const squares = new Squares(100)
 
-    xit('gets the square of sum', () => {
+    it('gets the square of sum', () => {
       expect(squares.squareOfSum).toBe(25502500)
     })
 
