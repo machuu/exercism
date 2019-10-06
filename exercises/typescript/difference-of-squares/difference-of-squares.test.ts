@@ -9,7 +9,7 @@ describe('Squares', () => {
       expect(squares.squareOfSum).toBe(225)
     })
 
-    xit('gets the sum of squares', () => {
+    it('gets the sum of squares', () => {
       expect(squares.sumOfSquares).toBe(55)
     })
 
@@ -26,7 +26,7 @@ describe('Squares', () => {
       expect(squares.squareOfSum).toBe(3025)
     })
 
-    xit('gets the sum of squares', () => {
+    it('gets the sum of squares', () => {
       expect(squares.sumOfSquares).toBe(385)
     })
 
@@ -43,7 +43,7 @@ describe('Squares', () => {
       expect(squares.squareOfSum).toBe(25502500)
     })
 
-    xit('gets the sum of squares', () => {
+    it('gets the sum of squares', () => {
       expect(squares.sumOfSquares).toBe(338350)
     })
 
