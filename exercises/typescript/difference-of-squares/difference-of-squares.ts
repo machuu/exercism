@@ -16,6 +16,10 @@ class Squares {
   private calcSumUpTo( power: number = 1 ): number {
     var sum: number = 0;
     switch(power) {
+      case 1: {
+        sum = ( this.numberUpTo * (this.numberUpTo + 1) ) / 2;
+        break;
+      }
       default: {
         for ( var num: number = 1 ; num <= this.numberUpTo ; num++ ) {
           sum += Math.pow(num, power);
