@@ -20,6 +20,10 @@ class Squares {
         sum = ( this.numberUpTo * (this.numberUpTo + 1) ) / 2;
         break;
       }
+      case 2: {
+        sum = ( this.numberUpTo * (this.numberUpTo + 1) * (2 * this.numberUpTo + 1) ) / 6;
+        break;
+      }
       default: {
         for ( var num: number = 1 ; num <= this.numberUpTo ; num++ ) {
           sum += Math.pow(num, power);
