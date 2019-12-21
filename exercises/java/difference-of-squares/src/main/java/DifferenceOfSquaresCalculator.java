@@ -13,11 +13,7 @@ class DifferenceOfSquaresCalculator {
     }
 
     int computeSumOfSquaresTo(int input) {
-        int sum = 0;
-        for ( int i = 1 ; i <= input ; i++ ) {
-            sum += computeSquareOf(i);
-        }
-        return sum;
+        return ( input * ( input + 1 ) * ( 2 * input + 1 ) )/6;
     }
 
     int computeDifferenceOfSquares(int input) {
