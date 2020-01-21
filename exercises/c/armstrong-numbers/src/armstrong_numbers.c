@@ -1,13 +1,20 @@
 #include "armstrong_numbers.h"
 
 int is_armstrong_number(int candidate) {
-	int digits = candidate;
+	int digits = 0;
 	int sum    = 0;
 	int num_digits = 0;
 
+	digits = candidate;
 	while ( digits != 0 ) {
-		// need to get length of candidate for exponent
-		sum += digits % 10;
+		num_digits += 1;
+		digits /= 10;
+	}
+
+	digits = candidate;
+	while ( digits != 0 ) {
+		// need to add power of num_digits to sum calc
+		sum += (digits % 10);
 		digits /= 10;
 	}
 
