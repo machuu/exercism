@@ -1,4 +1,5 @@
 #include "armstrong_numbers.h"
+#include <math.h>
 
 int is_armstrong_number(int candidate) {
 	int digits = 0;
@@ -13,8 +14,7 @@ int is_armstrong_number(int candidate) {
 
 	digits = candidate;
 	while ( digits != 0 ) {
-		// need to add power of num_digits to sum calc
-		sum += (digits % 10);
+		sum += pow(digits % 10, num_digits);
 		digits /= 10;
 	}
 
