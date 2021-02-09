@@ -28,21 +28,21 @@ class ProteinTranslator {
     }
 
     public List<String> translate(String rnaSequence) {
-        List<String> aminoAcidSequence = new ArrayList<String>();
-        String aminoAcid = "";
+        List<String> proteinSequence = new ArrayList<String>();
+        String protein = "";
 
         for (String codon : splitRNASequenceIntoCodons(rnaSequence)) {
-            aminoAcid = getAminoAcidFromCodon( codon );
-            if ( aminoAcid == "STOP" ) {
+            protein = getProteinFromCodon( codon );
+            if ( protein == "STOP" ) {
                 break;
-            } else if ( aminoAcid == "UNKNOWN" ) {
+            } else if ( protein == "UNKNOWN" ) {
                 break;
             } else {
-                aminoAcidSequence.add(aminoAcid);
+                proteinSequence.add(protein);
             }
         }
 
-        return aminoAcidSequence;
+        return proteinSequence;
     }
 
     private static String[] splitRNASequenceIntoCodons(String rnaSequence) {
@@ -55,7 +55,9 @@ class ProteinTranslator {
         return rnaSequence.split("(<=\\G[AUGC]{3})");
     }
 
-    private static String getAminoAcidFromCodon(String codon) {
-        return codons.getOrDefault(codon, "UNKNOWN");
+    private static String getProteinFromCodon(String codon) {
+        String protein = codons.getOrDefault(codon, "UNKNOWN");
+
+        return protein;
     }
 }
