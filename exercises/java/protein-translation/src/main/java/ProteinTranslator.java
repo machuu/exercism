@@ -53,7 +53,7 @@ class ProteinTranslator {
 
         // Int codonSequenceLength =
         // String[] codonSequence = new String[
-        return rnaSequence.split("(<=\\G[AUGC]{3})");
+        return rnaSequence.split("(?<=\\G[AUGC]{3})");
     }
 
     private static String getProteinFromCodon(String codon) {
