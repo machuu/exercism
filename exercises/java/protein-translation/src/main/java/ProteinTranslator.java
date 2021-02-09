@@ -42,6 +42,7 @@ class ProteinTranslator {
             }
         }
 
+        System.out.format("Translate: %s -> %s\n", rnaSequence, String.join(",", proteinSequence));
         return proteinSequence;
     }
 
@@ -57,6 +58,7 @@ class ProteinTranslator {
 
     private static String getProteinFromCodon(String codon) {
         String protein = codons.getOrDefault(codon, "UNKNOWN");
+        System.out.format("Translate: %s -> %s\n", codon, protein);
 
         return protein;
     }
