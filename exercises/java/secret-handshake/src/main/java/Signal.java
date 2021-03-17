@@ -13,18 +13,10 @@ enum Signal {
     }
 
     public boolean isEncoded ( int number ) {
-        if ( (number & this.key) > 0 ) {
-            return true;
-        } else {
-            return false;
-        }
+        return (number & this.key) > 0;
     }
 
     public static boolean isReversed ( int number ) {
-        if ( (number & Signal.REVERSE) > 0 ) {
-            return true;
-        } else {
-            return false;
-        }
+        return (number & Signal.REVERSE) > 0;
     }
 }
