@@ -12,7 +12,7 @@ enum Signal {
         this.key   = key;
     }
 
-    public boolean check ( int number ) {
+    public boolean isEncoded ( int number ) {
         if ( (number & this.key) > 0 ) {
             return true;
         } else {
@@ -20,7 +20,7 @@ enum Signal {
         }
     }
 
-    public static boolean reverse ( int number ) {
+    public static boolean isReversed ( int number ) {
         if ( (number & Signal.REVERSE) > 0 ) {
             return true;
         } else {

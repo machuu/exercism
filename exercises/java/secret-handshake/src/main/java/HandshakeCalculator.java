@@ -8,12 +8,12 @@ class HandshakeCalculator {
         List<Signal> handshake = new ArrayList<Signal>();
 
         for ( Signal signal : Signal.values() ) {
-            if ( signal.check(number) ) {
+            if ( signal.isEncoded(number) ) {
                 handshake.add(signal);
             }
         }
 
-        if ( Signal.reverse(number) ) {
+        if ( Signal.isReversed(number) ) {
             Collections.reverse(handshake);
         }
 
