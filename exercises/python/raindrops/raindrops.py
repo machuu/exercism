@@ -6,7 +6,7 @@ class Drop(Enum):
   PLONG = 7
 
   def isIn(self, dropNumber):
-    return self.value % dropNumber == 0
+    return (dropNumber % self.value == 0)
 
 def convert(number):
   drops = ""
