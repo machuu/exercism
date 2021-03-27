@@ -15,6 +15,7 @@ def convert(number):
     if drop.isIn(number):
       drops+=drop.name
 
+  # If no drops were added, assign the number
   if drops == "":
     drops = str(number)
 
