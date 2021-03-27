@@ -12,7 +12,7 @@ def convert(number):
   drops = ""
   for drop in Drop:
     if drop.isIn(number):
-      drops+=drop.name
+      drops+=drop.name.capitalize()
 
   if drops == "":
     drops = str(number)
