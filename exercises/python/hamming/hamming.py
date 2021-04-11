@@ -6,8 +6,8 @@ def distance(strand_a, strand_b):
     return 0
 
   distance = 0
-  for char_index in range(0,len(strand_a)):
-    if (strand_a[char_index] != strand_b[char_index] ):
+  for char_a, char_b in zip(strand_a, strand_b):
+    if (char_a != char_b ):
       distance+=1
 
   return distance
