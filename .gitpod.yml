@@ -1,0 +1,10 @@
+tasks:
+  - command: |
+      source env-exercism.sh
+      tmuxp
+image:
+  file: .gitpod.Dockerfile
+
+#vscode:
+#  extensions:
+#    - vscodevim.vim
